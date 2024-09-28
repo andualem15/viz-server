@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import {notFound} from "./src/middlewares/notFound.js";
 import {handleError} from "./src/middlewares/handleError.js";
 import zonesRoute from "./src/resources/zones/zones.routes.js";
+import datasetsRoute from "./src/resources/datasets/datasets.routes.js";
 import cors from "cors";
 dotenv.config();
 
@@ -20,6 +21,8 @@ app.use(express.json())
 
 // api routes
 app.use("/zones", zonesRoute);
+// api routes
+app.use("/datasets", datasetsRoute);
 
 app.use(notFound);
 app.use(handleError);
